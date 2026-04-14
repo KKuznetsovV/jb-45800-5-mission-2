@@ -1,4 +1,5 @@
 import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer';
 import './AboutPage.css';
 
 function AboutPage() {
@@ -56,6 +57,7 @@ function AboutPage() {
           </section>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

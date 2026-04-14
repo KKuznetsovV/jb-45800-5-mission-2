@@ -7,8 +7,8 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <img src="/logo.png" alt="לוגו מזג אוויר" className="navbar-logo" />
-        מזג האוויר
+        <img src="/logo.png" alt="MakeILWeatherGreatAgain logo" className="navbar-logo" />
+        MakeILWeatherGreatAgain
       </div>
       <ul className="navbar-links">
         <li>

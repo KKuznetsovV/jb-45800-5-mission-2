@@ -14,6 +14,7 @@ import { addEntry } from '../../redux/historySlice';
 import { fetchLocalities } from '../../services/localitiesService';
 import { fetchWeather } from '../../services/weatherService';
 import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer';
 import './HomePage.css';
 
 function HomePage() {
@@ -155,6 +156,7 @@ function HomePage() {
           </div>
         )}
       </main>
+      <Footer />
     </div>
   );
 }

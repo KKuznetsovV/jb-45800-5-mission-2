@@ -1,5 +1,6 @@
 import { useAppSelector } from '../../redux/hooks';
 import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer';
 import './HistoryPage.css';
 
 function HistoryPage() {
@@ -39,6 +40,7 @@ function HistoryPage() {
           </div>
         )}
       </main>
+      <Footer />
     </div>
   );
 }
