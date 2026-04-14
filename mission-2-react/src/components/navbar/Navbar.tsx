@@ -1,19 +1,23 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { toggleTheme } from '../../redux/themeSlice';
 import './Navbar.css';
 
 function Navbar() {
   const location = useLocation();
+  const isDark = useAppSelector((state) => state.theme.isDark);
+  const dispatch = useAppDispatch();
 
   return (
     <nav className="navbar">
       <div className="navbar-brand">
         <img src="/logo.png" alt="MakeILWeatherGreatAgain logo" className="navbar-logo" />
-        MakeILWeatherGreatAgain
+        <span className="navbar-brand-text">MakeILWeatherGreatAgain</span>
       </div>
       <ul className="navbar-links">
         <li>
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
-            דף בית
+            Home
           </Link>
         </li>
         <li>
@@ -21,7 +25,7 @@ function Navbar() {
             to="/history"
             className={location.pathname === '/history' ? 'active' : ''}
           >
-            היסטוריה
+            History
           </Link>
         </li>
         <li>
@@ -29,10 +33,18 @@ function Navbar() {
             to="/about"
             className={location.pathname === '/about' ? 'active' : ''}
           >
-            אודות
+            About
           </Link>
         </li>
       </ul>
+      <button
+        className="theme-toggle"
+        onClick={() => dispatch(toggleTheme())}
+        aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+        title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      >
+        {isDark ? '☀️' : '🌙'}
+      </button>
     </nav>
   );
 }

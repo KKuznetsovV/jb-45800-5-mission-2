@@ -4,9 +4,10 @@
   align-items: center;
   gap: 0.5rem;
   padding: 1.25rem 2rem;
-  background: #ffffff;
-  border-top: 1px solid #e5e7eb;
+  background: var(--footer-bg);
+  border-top: 1px solid var(--border-color);
   margin-top: auto;
+  transition: background 0.25s, border-color 0.25s;
 }
 
 .footer-logo {
@@ -18,6 +19,6 @@
 
 .footer-copy {
   font-size: 0.82rem;
-  color: #9ca3af;
+  color: var(--text-faint);
   margin: 0;
 }

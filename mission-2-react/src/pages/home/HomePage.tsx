@@ -41,8 +41,7 @@ function HomePage() {
           dispatch(setLocalitiesLoading(false));
         });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleLocalityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const englishName = e.target.value;
@@ -58,7 +57,7 @@ function HomePage() {
         dispatch(setWeather(data));
         dispatch(
           addEntry({
-            timestamp: new Date().toLocaleString('he-IL'),
+            timestamp: new Date().toLocaleString('en-GB'),
             localityName: hebrewName,
             country: data.location.country,
           })
@@ -81,19 +80,19 @@ function HomePage() {
     .sort((a, b) => a.city_name_he.localeCompare(b.city_name_he, 'he'));
 
   return (
-    <div className="page" dir="rtl">
+    <div className="page">
       <Navbar />
       <main className="home-main">
-        <h1 className="page-title">מזג האוויר בישראל</h1>
+        <h1 className="page-title">Weather in Israel</h1>
 
         <div className="selector-wrapper">
           <label htmlFor="locality-select" className="selector-label">
-            בחר יישוב:
+            Select location:
           </label>
           {localitiesLoading ? (
-            <p className="loading-text">טוען יישובים...</p>
+            <p className="loading-text">Loading locations...</p>
           ) : localitiesError ? (
-            <p className="error-text">שגיאה בטעינת יישובים: {localitiesError}</p>
+            <p className="error-text">Error loading locations: {localitiesError}</p>
           ) : (
             <select
               id="locality-select"
@@ -102,7 +101,7 @@ function HomePage() {
               defaultValue=""
             >
               <option value="" disabled>
-                -- בחר יישוב --
+                -- Select location --
               </option>
               {filteredLocalities.map((locality, index) => (
                 <option key={index} value={locality.city_name_en.trim()}>
@@ -116,7 +115,7 @@ function HomePage() {
         {weatherLoading && (
           <div className="loading-spinner">
             <div className="spinner"></div>
-            <p>טוען מזג אוויר...</p>
+            <p>Loading weather...</p>
           </div>
         )}
 
@@ -141,15 +140,15 @@ function HomePage() {
             </div>
             <div className="weather-details">
               <div className="detail-item">
-                <span className="detail-label">טמפרטורה</span>
+                <span className="detail-label">Temperature</span>
                 <span className="detail-value temp">{weather.current.temp_c}°C</span>
               </div>
               <div className="detail-item">
-                <span className="detail-label">תיאור</span>
+                <span className="detail-label">Condition</span>
                 <span className="detail-value">{weather.current.condition.text}</span>
               </div>
               <div className="detail-item">
-                <span className="detail-label">מהירות רוח</span>
+                <span className="detail-label">Wind Speed</span>
                 <span className="detail-value">{weather.current.wind_kph} kph</span>
               </div>
             </div>

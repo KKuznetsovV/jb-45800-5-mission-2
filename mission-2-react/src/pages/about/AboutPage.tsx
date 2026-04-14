@@ -4,25 +4,26 @@ import './AboutPage.css';
 
 function AboutPage() {
   return (
-    <div className="page" dir="rtl">
+    <div className="page">
       <Navbar />
       <main className="about-main">
-        <h1 className="page-title">אודות</h1>
+        <h1 className="page-title">About</h1>
 
         <div className="about-content">
           <section className="about-card">
-            <h2>🌍 אודות האתר</h2>
+            <h2>🌍 About the Site</h2>
             <p>
-              אתר מזג האוויר בישראל מאפשר לכם לצפות במזג האוויר הנוכחי בכל
-              יישוב בישראל בלחיצה אחת.
+              Israel Weather lets you view the current weather for any locality
+              in Israel with a single click.
             </p>
             <p>
-              בחרו יישוב מתיבת הבחירה בדף הבית וקבלו מיד מידע עדכני כולל
-              טמפרטורה, תיאור מזג האוויר ומהירות הרוח.
+              Choose a locality from the dropdown on the Home page to instantly
+              get up-to-date information including temperature, weather
+              description, and wind speed.
             </p>
             <p>
-              רשימת היישובים מתעדכנת ממאגרי המידע הממשלתיים הפתוחים, ומידע
-              מזג האוויר מסופק על ידי{' '}
+              The locality list is sourced from open government data, and
+              weather data is provided by{' '}
               <a
                 href="https://www.weatherapi.com"
                 target="_blank"
@@ -35,22 +36,19 @@ function AboutPage() {
           </section>
 
           <section className="about-card">
-            <h2>👤 אודות המפתח</h2>
+            <h2>👤 About the Developer</h2>
             <div className="developer-photo-wrapper">
-              <img src="/student_photo.jpeg" alt="תמונת הסטודנט" className="developer-photo" />
+              <img src="/student_photo.jpeg" alt="Student photo" className="developer-photo" />
             </div>
             <ul className="developer-info">
               <li>
-                <strong>שם:</strong> Kirill Kuznetsov
+                <strong>Name:</strong> Kirill Kuznetsov
               </li>
               <li>
-                <strong>קורס:</strong> jb-45800-5
+                <strong>Course:</strong> jb-45800-5
               </li>
               <li>
-                <strong>מוסד:</strong> ג'ון ברייס הדרכה
-              </li>
-              <li>
-                <strong>טכנולוגיות:</strong> React, TypeScript, Redux Toolkit,
+                <strong>Technologies:</strong> React, TypeScript, Redux Toolkit,
                 Vite
               </li>
             </ul>

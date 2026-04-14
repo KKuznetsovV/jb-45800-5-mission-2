@@ -7,24 +7,24 @@ function HistoryPage() {
   const { entries } = useAppSelector((state) => state.history);
 
   return (
-    <div className="page" dir="rtl">
+    <div className="page">
       <Navbar />
       <main className="history-main">
-        <h1 className="page-title">היסטוריית חיפושים</h1>
+        <h1 className="page-title">Search History</h1>
 
         {entries.length === 0 ? (
           <div className="empty-history">
-            <p>🔍 לא בוצעו חיפושים עדיין.</p>
-            <p>חפש יישוב בדף הבית כדי להתחיל.</p>
+            <p>🔍 No searches yet.</p>
+            <p>Search for a location on the Home page to get started.</p>
           </div>
         ) : (
           <div className="table-wrapper">
             <table className="history-table">
               <thead>
                 <tr>
-                  <th>זמן החיפוש</th>
-                  <th>שם היישוב</th>
-                  <th>מדינה</th>
+                  <th>Time</th>
+                  <th>Location</th>
+                  <th>Country</th>
                 </tr>
               </thead>
               <tbody>
